@@ -4,20 +4,20 @@ import React, { useEffect, useState } from "react";
 
 const Top = () => {
   const [visible, setVisible] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
-  let prev = window.scrollY;
-  const navPos = () => {
-    let currenSc = scrollY;
-    if (prev < currenSc) {
-      setVisible(true);
-    }
-    if (prev > currenSc) {
-      setVisible(false);
-    }
-    prev = currenSc;
-  };
   useEffect(() => {
-    window.addEventListener("scroll", navPos);
+    window.addEventListener("scroll", () => {
+      let prev = window.scrollY;
+      let currenSc = scrollY;
+      if (prev < currenSc) {
+        setVisible(true);
+      }
+      if (prev > currenSc) {
+        setVisible(false);
+      }
+      prev = currenSc;
+    });
     // setVisible(true);
   });
   return (
