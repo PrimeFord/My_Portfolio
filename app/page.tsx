@@ -9,13 +9,21 @@ import ContactCard from "./components/ContactCard";
 import Footer from "./components/Footer";
 import Top from "./components/Top";
 import HireModal from "./components/HireModal";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Backdrop from "./components/Backdrop";
 
 export default function Home() {
   const [toggle, setToggle] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
   return (
     <div
       className="w-[100%] h-fit bg-[#FBFBFB] dark:bg-[#263138] relative"
