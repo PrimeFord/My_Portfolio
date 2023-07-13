@@ -9,15 +9,12 @@ const HireModal = ({ isVisible, onClose }: any) => {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const finalMessage = `Fullname: ${fullname}${(<br />)}
-  Email: ${email}${(<br />)}
-  Phone: ${phone}${(<br />)}
-  Message: ${body}`;
-
+  const finalMessage = `Fullname: ${fullname}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${body}`;
   if (!isVisible) return null;
 
   const handleClose = (e: any) => {
     if (e.target.id === "wrapper") onClose();
+    console.log(finalMessage);
   };
   return (
     <div
