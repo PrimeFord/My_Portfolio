@@ -42,6 +42,7 @@ const HireModal = ({ isVisible, onClose }: any) => {
           <form
             className="forms p-2  lg:grid lg:grid-cols-2"
             method="POST"
+            id="hire"
             action={`mailto:wolabash@gmail.com?subject=${subject}&body=${finalMessage}`}
           >
             <section>
@@ -105,7 +106,11 @@ const HireModal = ({ isVisible, onClose }: any) => {
               ></textarea>
             </section>
             <section className="submit dark:bg-[#FBFBFB] dark:text-[#263138] dark:hover:bg-[#263138] dark:hover:border-2 dark:hover:border-solid dark:hover:border-[#FBFBFB] dark:hover:text-[#FBFBFB]">
-              <button type="submit" className="flex items-center gap-4">
+              <button
+                type="submit"
+                form="hire"
+                className="flex items-center gap-4"
+              >
                 Submit
               </button>
             </section>
